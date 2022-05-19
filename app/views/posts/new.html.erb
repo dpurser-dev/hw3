@@ -1,11 +1,21 @@
-<h1>New Post</h1>
+<header>
+<img src="../033-books.png">
+<h1>My Travel Library</h1>
+</header>
+
+<div class="subheading">
+<img src="../018-textbook-black.png">
+<h2>New post for <%= @place["name"] %></h2>
+</div>
 
 <%= form_with :model => @post do |form| %>
   <p>
     <%= form.label "title" %>
     <%= form.text_field "title" %>
+    <br><br>
     <%= form.label "posted_on" %>
     <%= form.date_field "posted_on" %>
+    <br><br>
     <%= form.label "description" %>
     <%= form.text_field "description" %>
   </p>
@@ -13,3 +23,5 @@
   <%= form.hidden_field "place_id" %>
   <%= form.submit %>
 <% end %>
+
+<p><a href="/places">Back to All Places</a></p>

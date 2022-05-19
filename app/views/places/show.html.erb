@@ -1,15 +1,27 @@
-<h1><%= @place["name"] %></h1>
+<header>
+<img src="../033-books.png">
+<h1>My Travel Library</h1>
+</header>
+
+<div class="subheading">
+<img src="../009-book.png">
+<h2><%= @place["name"] %></h2>
+</div>
 
 <% for post in @posts %>
+    <div class="journalentry">
     <h2><%= post["title"] %></h2>
     <p><%= post["posted_on"] %></p>
     <p><%= post["description"] %></p>
+    </div>
 <% end %>
 
-<p>
-  <a href="/posts/new?place_id=<%= @place["id"] %>">New Post</a>
-</p>
+
+<div class="placenew">
+<img src="../018-textbook-white.png">
+<a href="/posts/new?place_id=<%= @place["id"] %>">New Post</a>
+</div>
+
 
 <p><a href="/places">Back to All Places</a></p>
-
 <p><%= button_to "Delete this place", @company, method: :delete %></p>
